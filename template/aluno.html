@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página do Aluno</title>
+    <!-- Link para o CSS customizado -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Bootstrap CSS para estilo adicional (opcional) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Bem-vindo, {{ current_user.username }}</h1>
+        <h2 class="mt-4">Turmas Disponíveis</h2>
+        <ul class="list-group">
+            {% for turma in turmas.items %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <h3>
+                        <a href="{{ url_for('turma_page', nome=turma.name) }}">{{ turma.name }}</a>
+                    </h3>
+                    <form action="{{ url_for('favoritar_turma', turma_id=turma.id) }}" method="post">
+                        <button type="submit" class="btn btn-primary">Favoritar</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Bootstrap JS para funcionalidade adicional (opcional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
