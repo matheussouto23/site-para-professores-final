@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial - Plataforma Escolar</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link para o CSS customizado -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Plataforma Escolar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="{{ url_for('login') }}" class="nav-link">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('register') }}" class="nav-link">Registrar</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container text-center mt-5">
+        <h1>Bem-vindo à Plataforma Escolar</h1>
+        <p class="lead mt-3">Seu sistema de gerenciamento escolar para professores e alunos.</p>
+        <div class="mt-4">
+            <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg">Login</a>
+            <a href="{{ url_for('register') }}" class="btn btn-secondary btn-lg">Registrar</a>
+        </div>
+    </div>
+
+    <!-- Seção do Desenvolvedor -->
+    <div class="container text-center mt-5">
+        <h2>Sobre o Desenvolvedor</h2>
+        <p>Desenvolvido por Matheus Souto</p>
+        <a href="https://github.com/matheussouto23" class="btn btn-outline-dark" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/matheus-souto-3a8448328/" class="btn btn-outline-primary" target="_blank">LinkedIn</a>
+    </div>
+
+    <footer class="text-center mt-5 mb-3">
+        <p>&copy; 2024 Plataforma Escolar. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- jQuery e Bootstrap Bundle JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
